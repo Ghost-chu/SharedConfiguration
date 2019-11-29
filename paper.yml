@@ -1,0 +1,303 @@
+# 本文件运行在Paper-226上（1.14.4），其中，w3为生存世界，wx为资源世界
+# 本服务器运行在BungeeCord环境下，你可能需要对于您的服务器进行你自己的配置
+# This is the main configuration file for Paper.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+# 
+# If you need help with the configuration or have any questions related to Paper,
+# join us in our Discord or IRC channel.
+# 
+# Discord: https://paperdiscord.emc.gs
+# IRC: #paper @ irc.spi.gt ( http://irc.spi.gt/iris/?channels=paper )
+# Website: https://papermc.io/ 
+# Docs: https://paper.readthedocs.org/ 
+
+verbose: true
+config-version: 20
+settings:
+  load-permissions-yml-before-plugins: true
+  bungee-online-mode: true
+  suggest-player-names-when-null-tab-completions: true
+  region-file-cache-size: 512
+  incoming-packet-spam-threshold: 300
+  save-player-data: true
+  use-alternative-luck-formula: false
+  use-versioned-world: false
+  enable-player-collisions: true
+  save-empty-scoreboard-teams: false
+  velocity-support:
+    enabled: false
+    online-mode: false
+    secret: ''
+  watchdog:
+    early-warning-every: 5000
+    early-warning-delay: 10000
+  spam-limiter:
+    tab-spam-increment: 1
+    tab-spam-limit: 500
+  book-size:
+    page-max: 2560
+    total-multiplier: 0.98
+  async-chunks:
+    enable: true
+    load-threads: 4
+messages:
+  no-permission: 很抱歉，您无权运行此指令，如果你相信这是个错误，请联系服务器管理员
+  kick:
+    flying-player: 飞行未在此服务器上启用
+    flying-vehicle: 飞行未在此服务器上启用
+    authentication-servers-down: 身份验证服务器不可用，请稍后重新连接再试
+    connection-throttle: 连接过于频繁，请稍后再试
+timings:
+  enabled: false # 禁用Timings，原因：https://github.com/PaperMC/Paper/issues/2575
+  verbose: true
+  server-name-privacy: false
+  hidden-config-entries:
+  - database
+  - settings.bungeecord-addresses
+  history-interval: 300
+  history-length: 3600
+  server-name: Minecraft Server
+world-settings:
+  default:
+    per-player-mob-spawns: true # 启用针对每个玩家的怪物生成限制，本配置与Bukkit.yml的spawn-limit为搭档限制
+    fix-zero-tick-instant-grow-farms: true
+    count-all-mobs-for-spawning: false
+    max-auto-save-chunks-per-tick: 6
+    auto-save-interval: -1
+    falling-block-height-nerf: 0
+    tnt-entity-height-nerf: 0
+    filter-nbt-data-from-spawn-eggs-and-related: true
+    max-entity-collisions: 2
+    disable-creeper-lingering-effect: false
+    duplicate-uuid-resolver: saferegen
+    duplicate-uuid-saferegen-delete-range: 32
+    disable-teleportation-suffocation-check: false
+    optimize-explosions: true
+    portal-search-radius: 48 # 针对1.14.4的糟糕的区块性能缩小搜索范围
+    fire-physics-event-for-redstone: true
+    fixed-chunk-inhabited-time: -1
+    use-vanilla-world-scoreboard-name-coloring: false
+    remove-corrupt-tile-entities: true
+    enable-treasure-maps: true
+    treasure-maps-return-already-discovered: false
+    experience-merge-max-value: -1
+    prevent-moving-into-unloaded-chunks: true
+    disable-thunder: false
+    skeleton-horse-thunder-spawn-chance: 0.01
+    disable-ice-and-snow: false
+    keep-spawn-loaded-range: 7
+    keep-spawn-loaded: true
+    armor-stands-do-collision-entity-lookups: false
+    grass-spread-tick-rate: 4
+    water-over-lava-flow-speed: 5
+    bed-search-radius: 1
+    use-faster-eigencraft-redstone: false
+    nether-ceiling-void-damage-height: 0
+    allow-non-player-entities-on-scoreboards: false
+    disable-explosion-knockback: false
+    parrots-are-unaffected-by-player-movement: false
+    container-update-tick-rate: 3
+    non-player-arrow-despawn-rate: 60
+    creative-arrow-despawn-rate: 60
+    prevent-tnt-from-moving-in-water: false
+    armor-stands-tick: false
+    spawner-nerfed-mobs-should-jump: true
+    allow-leashing-undead-horse: false
+    baby-zombie-movement-speed: 0.5
+    all-chunks-are-slime-chunks: false
+    mob-spawner-tick-rate: 2
+    despawn-ranges:
+      soft: 28
+      hard: 96
+    lightning-strike-distance-limit:
+      sound: -1
+      impact-sound: -1
+      flash: -1
+    frosted-ice:
+      enabled: true
+      delay:
+        min: 20
+        max: 40
+    lootables:
+      auto-replenish: false
+      restrict-player-reloot: true
+      reset-seed-on-fill: true
+      max-refills: -1
+      refresh-min: 12h
+      refresh-max: 2d
+    hopper:
+      cooldown-when-full: true
+      disable-move-event: false
+    game-mechanics:
+      disable-relative-projectile-velocity: false
+      scan-for-legacy-ender-dragon: true
+      disable-chest-cat-detection: true
+      shield-blocking-delay: 5
+      disable-player-crits: false
+      disable-sprint-interruption-on-attack: false
+      disable-end-credits: false
+      disable-unloaded-chunk-enderpearl-exploit: true
+    max-growth-height:
+      cactus: 3
+      reeds: 3
+    fishing-time-range:
+      MinimumTicks: 100
+      MaximumTicks: 600
+    squid-spawn-height:
+      maximum: 0.0
+    anti-xray:
+      enabled: true
+      engine-mode: 2
+      chunk-edge-mode: 2
+      max-chunk-section-index: 3
+      update-radius: 2
+      hidden-blocks:
+      - gold_ore
+      - iron_ore
+      - coal_ore
+      - lapis_ore
+      - mossy_cobblestone
+      - obsidian
+      - chest
+      - diamond_ore
+      - redstone_ore
+      - clay
+      - emerald_ore
+      - ender_chest
+      - spawner
+      - bookshelf
+      - trapped_chest
+      replacement-blocks:
+      - stone
+      - oak_planks
+    alt-item-despawn-rate: # 针对常见垃圾和Mob Farm的掉落物加速despawn
+      enabled: true
+      items:
+        COBBLESTONE: 300
+        NETHERRACK: 300
+        WHITE_CARPET: 300
+        ORANGE_CARPET: 300
+        MAGENTA_CARPET: 300
+        LIGHT_BLUE_CARPET: 300
+        YELLOW_CARPET: 300
+        LIME_CARPET: 300
+        PINK_CARPET: 300
+        GRAY_CARPET: 300
+        LIGHT_GRAY_CARPET: 300
+        CYAN_CARPET: 300
+        PURPLE_CARPET: 300
+        BLUE_CARPET: 300
+        BROWN_CARPET: 300
+        GREEN_CARPET: 300
+        RED_CARPET: 300
+        BLACK_CARPET: 300
+        POWERED_RAIL: 300
+        DETECTOR_RAIL: 300
+        RAIL: 300
+        ACTIVATOR_RAIL: 300
+        SUGAR_CANE: 300
+        BAMBOO: 300
+        CARROT: 300
+        POTATO: 300
+        POISONOUS_POTATO: 300
+        BEETROOT: 300
+        WHEAT: 300
+        WHEAT_SEEDS: 300
+        EGG: 1200
+        INK_SAC: 600
+        SLIME_BALL: 600
+        KELP: 300
+        GRAVEL: 300
+        SAND: 300
+        GRANITE: 300
+        DIORITE: 300
+        ANDESITE: 300
+        DIRT: 300
+        RED_SAND: 300
+        ROTTEN_FLESH: 300
+        SPIDER_EYE: 300
+        BONE: 600
+        ARROW: 1200
+        GUNPOWERED: 1200
+        ROTTEN_FLESH: 600
+        GOLDEN_SWORD: 2400
+        GOLD_NUGGET: 600
+        GOLD_INGOT: 1200
+    generator-settings:
+      flat-bedrock: false
+    baby-zombie-movement-modifier: 0.5
+  w3_nether:
+    anti-xray: 
+      enable: false # 非主世界不需要X-Ray限制
+    max-entity-collisions: 1 # 非主世界不需要碰撞箱功能，因为通常非主世界会有大量的Mob Farm
+  w3_the_end:
+    anti-xray:
+      enable: false
+    container-update-tick-rate: 4
+    max-entity-collisions: 1
+    alt-item-despawn-rate:
+      enabled: true
+      items:
+        ENDER_PEARL: 300
+  wx:
+    max-entity-collisions: 1
+    grass-spread-tick-rate: 10 # 尽可能降低资源世界的各项游戏机制的占用
+    keep-spawn-loaded: false # 资源世界不需要保持加载
+    auto-save-interval: 110500 # 资源世界存不存的无所谓
+    hopper:
+      cooldown-when-full: true
+      disable-move-event: true # ！！禁用资源世界的移动监听事件，如果你有插件监听，请禁用此功能
+    mob-spawner-tick-rate: 1
+    armor-stands-tick: false
+    fire-physics-event-for-redstone: true # 资源世界不需要原版红石特性
+    use-faster-eigencraft-redstone: true # 资源世界不需要原版红石特性
+    all-chunks-are-slime-chunks: true
+    non-player-arrow-despawn-rate: 20 # 尽快despawn非玩家的arrow
+    container-update-tick-rate: 5 # 资源世界不需要及时更新容器
+  wx_nether:
+    max-entity-collisions: 1
+    grass-spread-tick-rate: 10
+    keep-spawn-loaded: false
+    anti-xray:
+      enable: false
+    auto-save-interval: 11050
+    hopper:
+      cooldown-when-full: true
+      disable-move-event: true
+    armor-stands-tick: false
+    fire-physics-event-for-redstone: true
+    use-faster-eigencraft-redstone: true
+    non-player-arrow-despawn-rate: 20
+    container-update-tick-rate: 5
+  wx_the_end:
+    max-entity-collisions: 1
+    grass-spread-tick-rate: 10
+    keep-spawn-loaded: false
+    anti-xray:
+      enable: false
+    auto-save-interval: 11050
+    hopper:
+      cooldown-when-full: true
+      disable-move-event: true
+    armor-stands-tick: false
+    fire-physics-event-for-redstone: true
+    use-faster-eigencraft-redstone: true
+    non-player-arrow-despawn-rate: 20
+    container-update-tick-rate: 5
+    alt-item-despawn-rate:
+      enabled: true
+      items:
+        ENDER_PEARL: 200
+  blackroom:
+    max-entity-collisions: 1
+    grass-spread-tick-rate: 10
+    hopper:
+      cooldown-when-full: true
+      disable-move-event: true
+    anti-xray:
+      enabled: false
+    keep-spawn-loaded: true
+    use-faster-eigencraft-redstone: true
+    container-update-tick-rate: 10
+    non-player-arrow-despawn-rate: 20
